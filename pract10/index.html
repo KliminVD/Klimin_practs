@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+        div{
+            width: 120px;
+            height: 75px;
+            border: solid 3px;
+            border-color: rgb(176, 1, 1);
+            display: inline-block;
+            vertical-align: top;
+        }
+        *{
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<html>
+    <form id="captchaForm">
+        <p id="letterCaptcha"></p>
+        <p id="numberCaptcha"></p>
+        <input type="text" id="captchaInput" placeholder="Введите значение капчи">
+        <input type="submit" id="submitButton" value="Отправить" disabled>
+        <input type="submit" id="check" value="Проверить"><br>
+        <input type="button" id="busk" value="Корзина"><br>
+        <div>У этого текста 26 символов</div>
+        <div>А у этого - 14</div>
+        <div>Аа у этого - 15</div>
+    </form>
+    <script src="script.js"></script>
+</html>

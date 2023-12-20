@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        #product-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            cursor: grab;
+        }
+
+        #cart {
+            border: 2px dashed #333;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        #total-price {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="product-list">
+    <li id="product1" class="product" price="50" draggable="true">Product 1 - $50</li>
+    <li id="product2" class="product" price="30" draggable="true">Product 2 - $30</li>
+    <li id="product3" class="product" price="20" draggable="true">Product 3 - $20</li>
+</ul>
+
+<div id="cart">
+    <p>Shopping Cart</p>
+    <ul id="cart-items"></ul>
+    <p id="total-price">Total Price: $0</p>
+</div>
+
+<script>
+    var cart = document.getElementById('cart');
+    var cartItems = document.getElementById('cart-items');
+    var totalPriceDisplay = document.getElementById('total-price');
+
+    // Добавляем обработчик события dragover, чтобы предотвратить стандартное действие браузера
+    cart.addEventListener('dragover', function (e) {
+        e.preventDefault();
+    });
+
+    // Добавляем обработчик события drop для корзины
+    cart.addEventListener('drop', function (e) {
+        e.preventDefault();
+
+        // Получаем данные из переносимого элемента
+        var productId = e.dataTransfer.getData('text/plain');
+        var productElement = document.getElementById(productId);
+
+        // Создаем новый элемент в корзине
+        var cartItem = document.createElement('li');
+        cartItem.textContent = productElement.textContent;
+
+        // Добавляем элемент в корзину и обновляем общую стоимость
+        cartItems.appendChild(cartItem);
+        updateTotalPrice();
+    });
+
+    // Добавляем обработчик события dragstart для каждого продукта
+    var products = document.querySelectorAll('.product');
+    products.forEach(function (product) {
+        product.addEventListener('dragstart', function (e) {
+            // Устанавливаем данные для переноса
+            e.dataTransfer.setData('text/plain', product.id);
+        });
+    });
+
+    function updateTotalPrice() {
+        var cartItemPrices = Array.from(cartItems.children).map(function (item) {
+            // Извлекаем цену из текста элемента
+            return parseInt(item.textContent.match(/\$\d+/)[0].slice(1));
+        });
+
+        // Считаем общую стоимость
+        var totalPrice = cartItemPrices.reduce(function (acc, price) {
+            return acc + price;
+        }, 0);
+
+        // Обновляем отображение общей стоимости
+        totalPriceDisplay.textContent = 'Total Price: $' + totalPrice;
+        
+    }
+</script>
+
+</body>
+</html>

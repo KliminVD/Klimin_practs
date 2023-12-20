@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .notification {
+            background-color: #f2f2f2;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        html {
+            background-color: rgb(137, 185, 228);
+        }
+        #notificationCounter {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        #bell {
+            display: none;
+        }
+    </style>
+    <title>Notification Site</title>
+</head>
+<body>
+
+    <div id="notificationCounter">Привет, это уведомление: 0</div>
+    <input type="button" id="bell" onclick="stopNotifications(startNotifications)">
+    <label for="bell"><img src = "bell.png" width="50" height="50"></label>
+
+    <div>
+        <h2>Список</h2>
+        <ul id="list"></ul>
+        <button onclick="addItemToList()">Добавить строку</button>
+    </div>
+
+    <script>
+        let notificationCounter = 0;
+        let notificationInterval;
+        function showNotification(options) {
+            const notificationDiv = document.createElement("div");
+            notificationDiv.className = "notification";
+            notificationDiv.innerHTML = options?.content;
+
+            document.body.appendChild(notificationDiv);
+            notificationDiv.style.opacity = 1;
+            
+            setTimeout(() => {
+                notificationDiv.style.opacity = 0;
+                notificationDiv.style.transition = "opacity 1s";
+            }, 500);
+            setTimeout(() => {
+                notificationDiv.remove();
+            }, 1500);
+        }
+
+        function updateNotificationCounter() {
+            const counterElement = document.getElementById("notificationCounter");
+            counterElement.innerText = `Привет, это уведомление: ${notificationCounter}`;
+        }
+
+        function stopNotifications(func) {
+            clearInterval(notificationInterval);
+            setTimeout(() => {
+                updateNotificationCounter(); // Update the counter after 10 seconds
+                func(); // Restart notifications after 10 seconds
+            }, 10000);
+        }
+
+        function addItemToList() {
+            let listItemValue;
+            do {
+                listItemValue = prompt("Enter list item:");
+                // Check if the user pressed Cancel or entered an empty string
+                if (listItemValue === null) {
+                    break;
+                }
+                // Sanitize user input to prevent HTML injection
+                listItemValue = listItemValue.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                const list = document.getElementById("list");
+                if (listItemValue.trim() !== "") {
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = listItemValue;
+                    list.appendChild(listItem);
+                }
+            } while (listItemValue !== null && listItemValue.trim() !== "");
+        }
+
+        function startNotifications() {
+            notificationInterval = setInterval(() => {
+                notificationCounter++;
+                updateNotificationCounter();
+                showNotification({ content: `Привет, это уведомление: #${notificationCounter}` });
+            }, 3000);
+        }
+
+        // Start auto-generating notifications
+        startNotifications();
+    </script>
+</body>
+</html>

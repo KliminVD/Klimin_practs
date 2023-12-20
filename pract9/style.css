@@ -1,0 +1,93 @@
+* {
+    font-family: "Inter", sans-serif;
+    color: white
+}
+body {
+    background: rgb(32, 24, 74);
+}
+input{
+    color: black;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid;
+}
+button{
+    color: black;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid;
+    text-align: center;
+}
+form{
+    margin: 10rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
+    background-color: 	rgba(255, 255, 255, 0.2);
+    width: 100%;
+    height: 100%;
+    min-width: 230px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding-left: 50px;
+    position: relative;
+    z-index: 100;
+}
+.task3 {
+    position: relative;
+    width: 40%;
+    height: 50vh;
+    margin: 0 auto;
+}
+form .input{
+    margin: 5px 0;
+}
+.quad{
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgb(129, 128, 128);
+    animation: blocks-task3 6s infinite;
+    animation-delay: calc(-1s * var(--i1));
+}
+.quad#b1{
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    right: -20px;
+    --i1: 1;
+}
+.quad#b2{
+    width: 100px;
+    height: 100px;
+    left: -80px;
+    top: 30px;
+    --i1: 2;
+}
+.quad#b3{
+    width: 60px;
+    height: 60px;
+    bottom: -20px;
+    left: 100px;
+    --i1: 3;
+}
+.quad#b4{
+    width: 70px;
+    height: 70px;
+    right: -60px;
+    top: 140px;
+    --i1: 4;
+
+}
+@keyframes blocks-task3{
+    0%, 100%{
+        transform: translateY(-60px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+}

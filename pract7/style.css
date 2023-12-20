@@ -1,0 +1,446 @@
+* {
+    font-family: "Inter", sans-serif;
+    color: white
+}
+:root {
+    --linear-color-a: linear-gradient(red, yellow);
+    --linear-color-b: linear-gradient(rgb(195, 0, 221), rgb(0, 6, 184));
+    --linear-color-c: linear-gradient(rgb(0, 202, 233), rgb(18, 187, 40));
+}
+body {
+    background: rgb(32, 24, 74);
+}
+.imgs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10rem;
+}
+
+.imgs .main-block{
+    border-radius: 10px;
+    width: 100px;
+    height: 200px;
+    position: relative;
+    transform: skew(10deg, 0);
+    transition: all 0.5s;
+    z-index: 1;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
+}
+.imgs #p1 {
+    background: var(--linear-color-a);
+}
+.imgs #p2 {
+    background: var(--linear-color-b);
+}
+.imgs #p3 {
+    background: var(--linear-color-c);
+}
+.imgs .main-block::after{
+    content: 'Заголовок';
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    background-color: 	rgba(89, 88, 88, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    left: -25px;
+    top: 25px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transform: skew(-10deg, 0);
+    transition: all 0.5s;
+    z-index: 2;
+}
+.imgs section{
+    position: relative;
+}
+.imgs div.block1{
+    background-color: rgba(129, 128, 128, 0.5);
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 0;
+    right: -40px;
+    top: -20px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.imgs div.block2{
+    background-color: rgba(129, 128, 128, 0.5);
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 0;
+    left: -40px;
+    bottom: -20px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.imgs section:hover .main-block, .imgs section:hover .main-block::after{
+    transform: skew(0);
+}
+.imgs section:hover .main-block::after{
+    transform: scale(1.1);
+}
+.imgs section:hover .block1{
+    opacity: 0.5;
+    animation: blocks1-task1 6s linear infinite;
+}
+.imgs section:hover .block2{
+    opacity: 0.5;
+    animation: blocks2-task1 6s linear infinite;
+}
+@keyframes blocks1-task1{
+    0%, 100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-90px);
+    }
+}
+@keyframes blocks2-task1{
+    0%, 100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(90px);
+    }
+}
+.task2{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.social-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.social-links a{
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 20px;
+    border-radius: 40px;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.social-links a img{
+    position: relative;
+    z-index: 10;
+}
+.social-links a::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, red, yellow);
+    position: absolute;
+    top: -90px;
+    left: 0px;
+    transition: 0.5s;
+    z-index: 0;
+}
+.social-links a:hover::after{
+    top: 0px;
+}
+.social-links a:hover{
+    cursor: crosshair;
+}
+input {
+    color: black;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid;
+}
+form{
+    margin: 10rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
+    background-color: 	rgba(255, 255, 255, 0.2);
+    width: 100%;
+    height: 100%;
+    min-width: 230px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding-left: 50px;
+    position: relative;
+    z-index: 100;
+}
+.task3 {
+    position: relative;
+    width: 40%;
+    height: 50vh;
+    margin: 0 auto;
+}
+form .input{
+    margin: 5px 0;
+}
+.quad{
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgb(129, 128, 128);
+    animation: blocks-task3 6s infinite;
+    animation-delay: calc(-1s * var(--i1));
+}
+.quad#b1{
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    right: -20px;
+    --i1: 1;
+}
+.quad#b2{
+    width: 100px;
+    height: 100px;
+    left: -80px;
+    top: 30px;
+    --i1: 2;
+}
+.quad#b3{
+    width: 60px;
+    height: 60px;
+    bottom: -20px;
+    left: 100px;
+    --i1: 3;
+}
+.quad#b4{
+    width: 70px;
+    height: 70px;
+    right: -60px;
+    top: 140px;
+    --i1: 4;
+
+}
+@keyframes blocks-task3{
+    0%, 100%{
+        transform: translateY(-60px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+}
+@media screen and (max-width: 750px) {
+    section{
+        width: fit-content;
+        margin: 10px auto;
+        backdrop-filter: blur(10px);
+    }
+    .imgs, .social-links, .container4, .container5 {
+        flex-direction: column;
+    }
+    .imgs div.main-block, .card4, .bigger{
+        margin: 10px auto;
+    }
+}
+
+
+
+.card4{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.container4{
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.container4:hover .card4{
+    filter: blur(20px);
+    transform: scale(0.9);
+    opacity: 0.5;
+}
+
+.container4 .card4:hover{
+    filter: blur(0);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.card4 .circle{
+    position: relative;
+    top: -40px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    clip-path: circle(120px at center 0);
+}
+
+.circle h2{
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 30pt;
+}
+
+.card4 .content{
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    padding: 20px;
+}
+.card4 .content p{
+    color:black;
+}
+.card4 .content a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.card4:nth-child(1) .circle, .card4:nth-child(1) .content a{
+    background: rgb(255, 149, 0);
+}
+
+.card4:nth-child(2) .circle, .card4:nth-child(2) .content a{
+    background: rgb(202, 10, 74);
+
+}
+.card4:nth-child(3) .circle, .card4:nth-child(3) .content a{
+    background: rgb(184, 10, 184);
+
+}
+
+
+
+/* task5 */
+.container5{
+    padding: 100px 0 ; 
+    display: flex; 
+    justify-content: space-around; 
+    flex-wrap: wrap;
+}
+.bigger{
+    position: relative;
+    background-color: black;
+    width: 200px;
+    height: 300px;
+    z-index: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.bigger::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200px;
+    height: 300px;
+    background: linear-gradient(rgb(1, 202, 202), black);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: task5 5s linear infinite;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+@keyframes task5{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.card5{
+    inset: 4px;
+    z-index: 2;
+    position: absolute;
+    background-color: rgb(31, 1, 70);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.container5:hover .card5{
+    opacity: 0.6;
+}
+.container5 .card5:hover, .container5 .bigger:hover::before{
+    opacity: 1;
+}
+.card5:nth-child(1) .another-color{
+    font-size: 5em;
+    width: 100px;
+    height: 100%;
+    background-color: rgb(44, 35, 74);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.card5:nth-child(2) .another-color{
+    font-size: 5em;
+    width: 100px;
+    height: 100%;
+    background-color: rgb(44, 35, 74);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.card5:nth-child(3) .another-color{
+    font-size: 5em;
+    width: 100px;
+    height: 100%;
+    background-color: rgb(44, 35, 74);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.card5 .another-color p{
+    opacity: 0.2;
+    position: absolute;
+    top: -25px;
+    left: 20px;
+    transition: 0.5s;
+}
+.card5:hover .another-color p{
+    opacity: 1;
+    top: -70px;
+}
+.card5 .content{
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    padding: 20px;
+    z-index: 3;
+}
+.card5 .content a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20px;
+}

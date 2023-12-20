@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page with Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="contents">
+    <!-- Динамически загруженное содержимое -->
+    <p>This is some dynamic content with <a href="https://google.com">a link</a>.</p>
+    <a href="https://google.com">And another link</a>
+</div>
+<img id="mainImage" src="jusbox14h.jpg" alt="Main Image">
+<div id="gallery">
+    <img src="jusbox14h.jpg" alt="Image 1" onclick="changeImage('jusbox14h.jpg')">
+    <img src="jusboxcarioca.jpg" alt="Image 2" onclick="changeImage('jusboxcarioca.jpg')">
+    <img src="jusboxcitrus.jpg" alt="Image 3" onclick="changeImage('jusboxcitrus.jpg')">
+    <!-- Add more thumbnail images as needed -->
+</div>
+<ul id="selectableList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <!-- Добавьте больше элементов при необходимости -->
+</ul>
+<div id="slider">
+    <div id="slider-bar">
+        <div id="slider-handle"></div>
+    </div>
+</div>
+</body>
+<script src="scrypt1.js"></script>
+</html>

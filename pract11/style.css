@@ -1,0 +1,15 @@
+html{
+    background-color:rgb(156, 129, 76);
+    /* color: white; */
+}
+#cart, #products {
+    margin-bottom: 20px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+#total-price {
+    margin-top: 20px;
+}

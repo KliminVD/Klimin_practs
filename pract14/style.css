@@ -1,0 +1,49 @@
+html{
+    background-color: rgb(131, 190, 171);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+#gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#gallery img {
+    width: 100px;
+    height: 130px;
+    margin: 5px;
+    cursor: pointer;
+}
+#mainImage {
+    max-width: 100%;
+    max-height: 400px;
+    margin-top: 10px;
+}
+.selected {
+    background-color: rgb(169, 194, 251);
+}
+#slider {
+    width: 300px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#slider-bar {
+    height: 10px;
+    background-color: #ddd;
+    position: relative;
+}
+
+#slider-handle {
+    width: 20px;
+    height: 20px;
+    background-color: #3e3e3e;
+    position: absolute;
+    top: -5px;
+    cursor: pointer;
+}

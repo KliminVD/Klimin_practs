@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Корзина товаров</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Корзина товаров</h1>
+    
+    <div id="cart">
+        <h2>Товары в корзине:</h2>
+        <ul id="item-list"></ul>
+        <h3 id="total-price">Общая стоимость: 0 рублей</h3>
+        <button onclick="clearCart()">Очистить корзину</button><br>
+        <label for="min">Минимальная стоимость</label>
+        <input type="text" id="min">
+        <label for="max">Максимальная стоимость</label>
+        <input type="text" id="max"><br>
+        <button onclick="filterArray()">Фильтровать</button>
+        <button onclick="sortArray(1)">Отсортировать по возрастанию</button>
+        <button onclick="sortArray(2)">Отсортировать по убыванию</button>
+    </div>
+
+    <div id="products">
+        <h2>Товары для покупки:</h2>
+        <ul>
+            <li>
+                <span>Парфюм 1</span>
+                <button onclick="addToCart('Парфюм 1', 100)">+</button>
+                <button onclick="removeFromCart('Парфюм 1', 100)">-</button>
+                <button onclick="absoluteRemove('Парфюм 1')">Удалить товар</button>
+            </li>
+            <li>
+                <span5>Парфюм 2</span>
+                <button onclick="addToCart('Парфюм 2', 200)">+</button>
+                <button onclick="removeFromCart('Парфюм 2', 200)">-</button>
+                <button onclick="absoluteRemove('Парфюм 2')">Удалить товар</button>
+            </li>
+            <li>
+                <span>Парфюм 3</span>
+                <button onclick="addToCart('Парфюм 3', 300)">+</button>
+                <button onclick="removeFromCart('Парфюм 3', 300)">-</button>
+                <button onclick="absoluteRemove('Парфюм 3')">Удалить товар</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

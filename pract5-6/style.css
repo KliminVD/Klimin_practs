@@ -1,0 +1,291 @@
+html{
+    background-color: #53813e;
+}
+* {
+    font-family: "Comic Sans MS", sans-serif;
+}
+nav{
+    margin:0 auto;
+    padding: 10px;
+    border: 3px solid;
+    width: 600px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    background-color: 	#d3d3d3;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0px;
+    margin-bottom: 20px;
+}
+main section{
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+main section div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.imgs img{
+    margin: 5px auto;
+    border-radius: 10px;
+    transition: all 1s;
+}
+.imgs img:hover::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #e68aef;
+}
+.imgs img:hover{
+    background: linear-gradient(blue, pink);
+}
+.imgs img:hover::before{
+    content: 'asdasd';
+}
+nav a{
+    margin: 20px;
+}
+
+#burger, label[for="burger"]{
+    visibility: hidden;
+    user-select: none;
+    transform: rotate(0);
+    transition: transform 0.5s;
+}
+@media screen and (min-width: 750px) and (max-width: 1150px)
+{
+    main section{
+        flex-direction: column;
+        align-content: space-between;
+    }
+}
+@media screen and (max-width: 750px) {
+    label[for="burger"] {
+        visibility: visible;
+        position: fixed;
+        left: 5px;
+        z-index: 5;
+    }
+    label[for="burger"]::before{
+        content: '☰';
+    }
+    nav{
+        visibility: hidden;
+        border-radius: 0;
+        background-color:rgb(72, 120, 241);
+        border-color: #04007d;
+        width: 200px;
+        position: fixed;
+        top: 40px;
+        z-index: 5;
+    }
+    #burger:checked + label{
+        transform: rotate(0.25turn);
+        transition: all 0.5s;
+    }
+    #burger:checked + label + br + nav{
+        visibility: visible;
+        flex-direction: column;
+    }
+    main section{
+        flex-direction: column;
+        align-content: space-between;
+    }
+}
+.msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: fixed;
+    z-index: 5;
+    bottom: -23%;
+    right: 20px;
+    transition: all 1s;
+}
+.msg-topics{
+    opacity: 0;
+    transition: all 1s;
+}
+#bell{
+    visibility: hidden;
+}
+label[for="bell"] img{
+    width: 50px;
+    height: 50px;
+    background-color: #e68aef;
+    float: right;
+    user-select: none;
+    
+}
+label[for="bell"]:hover, .msg:hover {
+    bottom: 20px;
+}
+#bell:hover, .msg:hover .msg-topics{
+    background-color: darkkhaki;
+    border-radius: 5px;
+    box-shadow: 4px 4px  rgb(47, 47, 47);
+    opacity: 1;
+}
+.msg-topics{
+    margin-top: 5px;
+}
+.msg-topics h3{
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+.msg-topics h3:hover{
+    background-color: #e68aef;
+    transform: scale(1.1)
+}
+button::after{
+    content: 'нажми сюда'
+}
+button
+{
+    background: black;
+    font-size: 20px;
+	font-family: monospace;
+	color: #fff;
+    transition: .5s;
+    text-decoration: none;
+	padding: 20px 70px;
+	border-radius: 10px;
+	background-size: 200%;
+}
+#b2{
+	background: linear-gradient(to left, #f5af19, #f12711, #f5af19);
+    font-size: 20px;
+	font-family: monospace;
+	color: #fff;
+    transition: .5s;
+    text-decoration: none;
+	padding: 20px 70px;
+	border-radius: 10px;
+	background-size: 200%;
+}
+#b1:hover{
+    background: pink;
+    transform: rotate(1turn);
+}
+#b2:hover{
+    background-position: right;
+}
+#b3:hover{
+    animation: new-color 1s infinite;
+}
+#b4:hover{
+    box-shadow: 5px 5px red, -5px -5px rgb(1, 4, 156);
+}
+#b4:hover::before{
+    content: '❤️';
+}
+button:hover::after{
+    content: 'навел сюда'
+}
+.imgs div{
+    margin:auto auto;
+}
+.imgs div img{
+    position: relative;
+    z-index: 0;
+}
+.imgs div div{
+    position: absolute;
+    color: white;
+    opacity: 0;
+    z-index: 2;
+    background: linear-gradient(black, rgba(24, 39, 151, 0.686));
+    border-radius: 10px;
+    transition: all 1s;
+}
+#p1:hover div{
+    opacity: 1;
+    width: 500px;
+    height: 400px;
+}
+#p1:hover div::before
+{
+    content: '❤️';
+    position: inherit;
+    z-index: 2;
+    bottom: 10%;
+    left: 0;
+}
+#p2:hover div{
+    opacity: 1;
+    width: 400px;
+    height: 300px;
+}
+#p2:hover div::before
+{
+    content: '❤️';
+    position: inherit;
+    z-index: 2;
+    bottom: 10%;
+    left: 0;
+}
+#p3:hover div{
+    opacity: 1;
+    width: 600px;
+    height: 520px;
+}
+#p3:hover div::before
+{
+    content: '❤️';
+    position: inherit;
+    z-index: 2;
+    bottom: 10%;
+    left: 0;
+}
+@keyframes new-color{
+    0% { 
+        background-color: #f12711;
+        transform: scale(1.05);
+    }
+    33% {
+        background-color: aqua;
+        transform: scale(1.1);
+    }
+    66% {
+        background-color: rgb(0, 250, 171);
+        transform: scale(1.05);
+    }
+    100% {
+        background-color: rgb(0, 0, 0);
+        transform: scale(1)
+    }
+}
+.video{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+section[title="Видео"]{
+    width: 50%;
+    position: relative;
+}
+section[title="Видео"] div{
+    color: white;
+    position:absolute;
+    z-index: 2;
+    width: 280px;
+    height: 150px;
+    top: 75px;
+    left: -50px;
+    background: linear-gradient(black, rgba(24, 39, 151, 0.686));
+    opacity: 0;
+    transition: all 0.5s;
+}
+section[title="Видео"] iframe{
+    position: relative;
+    z-index: 0;
+}
+section[title="Видео"]:hover div{
+    opacity: 1;
+    transform: scale(1.2);
+}
+

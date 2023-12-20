@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Open+Sans:wght@300&family=Pacifico&display=swap');
+html{
+    font-family: Jost;
+    background-color: #bde7aa;
+}
+img[src="fixed_pic.png"]{
+    position: fixed;
+    left: 10px;
+    top: 47%;
+}
+header {
+    margin:0 auto;
+    width: 60%;
+    padding: 10px;
+    border: 3px solid;
+    box-sizing: content-box;
+    border-radius: 100px;
+    border-color: white;
+    background-color: 	#d3d3d3;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px black;
+}
+section[title="Регистрация"]{
+    border: 3px solid rgb(76, 151, 255);
+    background-color: rgb(178, 210, 255);
+    padding: 10px;
+    width: fit-content;
+    margin: 2vw auto;
+
+}
+section[title="Регистрация"] button:focus{
+    text-decoration: underline;
+}
+section[title="Отзыв"] form[title="text"]{
+    border: 3px solid rgb(76, 151, 255);
+    background-color: rgb(178, 210, 255);
+    padding: 10px;
+    width: fit-content;
+    margin: 2em 0;
+}
+section[title="Отзыв"]{
+    display: inline-block;
+    vertical-align: top
+}
+textarea::placeholder{
+    color: #00007a;
+}
+legend {
+    background-color: black;
+    color: #fff;
+    padding: 3px 6px;
+}
+input {
+    margin: 0.4rem;
+}
+section[title="Карта"]
+{
+    display: inline-block;
+    margin-left: 100px;
+}
+a[href="index.html#Topic2"]
+{
+    display: inline;
+    margin-inline: 35px;
+    vertical-align: 60%;
+    font-size: large;
+}
+a[href="index.html#About_us"]
+{
+    display: inline;
+    margin-inline: 35px;
+    vertical-align: 60%;
+    font-size: large;
+}
+a[href="index.html#History"]
+{
+    display: inline;
+    margin-inline: 35px;
+    vertical-align: 60%;
+    font-size: large;
+}
+a[href="index2.html"]
+{
+    display: inline;
+    margin-inline: 35px;
+    vertical-align: 60%;
+    font-size: large;
+}
+header a img{
+    margin-inline: 35px;
+    display: inline;
+}
+main {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+aside {
+    padding-left: 30px;
+    float: right;
+    box-shadow: inset 5px 0 #29627e;
+    color: #29627e;
+  }
+
+a {
+    text-decoration: none;
+}
+
+.links:hover{
+    text-decoration: underline;
+}
+.links:visited{
+    color: rgb(255, 0, 191);
+}
+.links:active{
+    color: rgb(3, 197, 155);
+}
+div[title="Cost"]
+{
+    position: relative;
+    box-sizing: content-box;
+    border-radius: 50px;
+    border-color:rgb(139, 0, 0);
+    padding: 50px;
+    border: 3px solid;
+    height: 300px;
+    z-index: 0;
+}
+aside.Costs{
+    position: absolute;
+    top: 20%;
+    left: 500px;
+}
+aside.Costs p{
+    margin-block: 30px;
+    list-style: square;
+    display: block;
+}
+section[title="Видео"]{
+    margin: 10px 0;
+}

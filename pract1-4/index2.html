@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация на Ваню44ка</title>
+    <link rel="icon"  href="parfum-favicon.png" type="image/png">
+    <link rel="stylesheet" href="pract2.css">
+</head>
+<body>
+    <a href="index.html#About_us"><img src="fixed_pic.png" width="100" height="100"></a>
+    <header id="header2">
+        <nav>
+            <a href="https://www.google.com/search?sca_esv=562865996&sxsrf=AB5stBj0o5iX1Wsr5vsdATIGLKB06DJpEw:1693948674270&q=%D0%BF%D0%B0%D1%80%D1%84%D1%8E%D0%BC%D0%B5%D1%80%D0%B8%D1%8F&tbm=isch&source=lnms&sa=X&sqi=2&ved=2ahUKEwjRlf3HspSBAxUCEhAIHQ1XABQQ0pQJegQIDRAB&biw=1536&bih=758&dpr=1.25#imgrc=ya_Hgxde-8rjuM">
+                <img srcset="parfum-favicon.png" width="50" height="50" ></a>
+            <a href="index.html#Topic2" class="links">Наши контакты</a>
+            <a href="index.html#About_us" class="links">О нас</a>
+            <a href="index.html#History" class="links">История парфюмерии</a>
+            <a href="index2.html" class="links">Регистрация</a>
+        </nav>
+        
+        
+    </header>
+    <main>
+        <section title="Регистрация">
+            <h2 id="Registr" class="Titles">Регистрация</h2>
+            <p>Для регистрации на сайте заполните следующую форму</p>
+            <form>
+                <p>
+                    <label for="name">Введите ваше имя</label>
+                    <input type="text" name="name" id="name" required>
+                </p>
+                <p>
+                    <label for="tel">Введите номер телефона</label>
+                    <input type="tel" name="tel" id="tel" required>
+                </p>
+                <p>
+                    <label for="emaillogin">Введите логин</label>
+                    <input type="email" name="emaillogin" id="emaillogin" required>
+                </p>
+                <p>
+                    <label for="password">Введите пароль</label>
+                    <input type="password" name="password" id="password" required>
+                </p>
+                <p>
+                    <label for="password1">Введите пароль повторно</label>
+                    <input type="password" name="password1" id="password1" required>
+                </p>
+                <button type="submit">Зарегистрироваться</button>
+                <p>
+                    <label for="reject">Уведомлять об изменениях на сайте</label>
+                    <input type="checkbox" name="reject" id="reject" checked>
+                </p>
+            </form>
+        </section>
+        <section title="Отзыв">
+            <h2 id="Review" class="Titles">Оставьте отзыв о нас</h2>
+            <form>
+                <fieldset class="Titles">
+                  <legend>Как вы оцениваете оформление сайта?</legend>
+              
+                  <input type="radio" id="good" name="beauty" value="Красиво" />
+                  <label for="good">Красиво</label><br />
+              
+                  <input type="radio" id="norm" name="beauty" value="Неплохо" />
+                  <label for="norm">Неплохо</label><br />
+              
+                  <input type="radio" id="bad" name="beauty" value="Ужасно" />
+                  <label for="bad">Ужасно</label>
+                </fieldset>
+            </form>
+            <form title="text">
+                <label for="review">Ваше мнение о сайте</label><br>
+                <textarea required minlength="10" maxlength="300" id="review" name="review" rows="15" cols="40" placeholder="Расскажите о ваших предпочтениях в стилистике сайта, о том, что понравилось и не понравилось"></textarea><br>
+                <label for="file">Файл с вашими пожеланиями</label><br>
+                <input id="file" type="file" name="file" accept=".txt"><br>
+                <button type="submit">Отправить</button>
+            </form>
+            
+        </section>
+        <section title="Карта">
+            <h2 class="Titles">Наше местоположение</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36001.54441898018!2d37.40408221479402!3d55.66992160307568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54dc1d23b51c3%3A0x74763ed59c81ccb6!2z0KDQotCjINCc0JjQoNCt0JA!5e0!3m2!1sru!2sru!4v1695827328061!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        
+    </main>
+    
+</body>
