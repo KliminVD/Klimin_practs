@@ -12,6 +12,7 @@ function changeImage(newSource) {
     var mainImage = document.getElementById('mainImage');
     mainImage.src = newSource;
 }
+// Это тоже изменения для коммита
 // 3 Задание
 var list = document.getElementById('selectableList');
 
