@@ -1,3 +1,4 @@
+// Новые изменения для коммита
 // Функция генерации случайной буквы разного регистра
 function generateRandomLetter() {
     var randomCharCode = Math.floor(Math.random() * 26) + 65;
