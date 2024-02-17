@@ -4,7 +4,7 @@ button.onclick = function(){
         window.addEventListener('mousemove', e => { // при движении курсора
             if (button.style.backgroundColor == 'red'){
 
-            
+            // ТЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ для коммита
             var div = document.createElement('div');
             x = e.clientX;
 

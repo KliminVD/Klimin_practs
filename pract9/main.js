@@ -1,4 +1,4 @@
-
+// Здесь тоже новые изменения в файле
 let check = false;
 while(!check)
 {

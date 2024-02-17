@@ -28,6 +28,7 @@ list.addEventListener('click', function (event) {
     clickedItem.classList.toggle('selected');
 });
 // 4 Задание
+// Этот комментарий добавлен для коммита в новой ветке
 var slider = document.getElementById('slider');
 var handle = document.getElementById('slider-handle');
 var isDragging = false;
